@@ -2,6 +2,7 @@ module UnitfulDistributions
 
 using Unitful: Quantity, oneunit
 using Distributions: UnivariateDistribution
+import Distributions: pdf 
 
     struct UnitfulDistribution{T<:UnivariateDistribution, Q<:Quantity}
         D::T
@@ -23,8 +24,10 @@ using Distributions: UnivariateDistribution
         end
     end
 
-    function Distributions.pdf( UD::UnitfulDistribution{D, Q}, x::Q ) where {D, Q}
+    function pdf( UD::UnitfulDistribution{D, Q}, x::Q ) where {D, Q}
         return pdf( UD.D, x/oneunit(Q) ) / oneunit(Q)
     end
+
+    export UnitfulDistribution
 
 end # module UnitfulDistributions
