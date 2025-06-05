@@ -1,0 +1,4 @@
+name = "UnitfulDistributions"
+uuid = "0f7e2b2a-29fa-49f7-8192-6450bd768ba8"
+authors = ["kcarloni <kcarloni@g.harvard.edu>"]
+version = "0.1.0"
