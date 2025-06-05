@@ -28,6 +28,10 @@ import Distributions: pdf
         return pdf( UD.D, x/oneunit(Q) ) / oneunit(Q)
     end
 
+    function (D::Type{T})( args::Vararg{Q,N} ) where {T<:UnivariateDistribution, Q<:Quantity, N}
+        UnitfulDistribution{D}(args...)
+    end
+
     export UnitfulDistribution
 
 end # module UnitfulDistributions
