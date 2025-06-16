@@ -13,7 +13,7 @@ import Distributions: pdf
         args = promote( args... )
         T = typeof(args[1])
         UnitfulDistribution{UD, T}(
-            UD( (args .÷ oneunit(T))... )
+            UD( (args ./ oneunit(T))... )
         )
     end
 
